@@ -6,13 +6,15 @@
 # Your platform. See PLATS for possible values.
 PLAT= none
 
-CC= gcc -std=gnu99
-CFLAGS= -O2 -Wall -Wextra -DLUA_COMPAT_5_2 $(SYSCFLAGS) $(MYCFLAGS)
+CC_PREFIX = arm-linux-gnueabihf
+
+CC= $(CC_PREFIX)-gcc -std=gnu99
+CFLAGS= -O2 -Wall -Wextra $(SYSCFLAGS) $(MYCFLAGS)
 LDFLAGS= $(SYSLDFLAGS) $(MYLDFLAGS)
 LIBS= -lm $(SYSLIBS) $(MYLIBS)
 
-AR= ar rcu
-RANLIB= ranlib
+AR= $(CC_PREFIX)-ar rcu
+RANLIB= $(CC_PREFIX)-ranlib
 RM= rm -f
 
 SYSCFLAGS=
