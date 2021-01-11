@@ -21,7 +21,7 @@ SYSCFLAGS=
 SYSLDFLAGS=
 SYSLIBS=
 
-MYCFLAGS=-I/mnt/share/build/include
+MYCFLAGS=-I/mnt/share/build/include -fPIC
 MYLDFLAGS=-L/mnt/share/build/lib
 MYLIBS=
 MYOBJS=
